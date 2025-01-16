@@ -8,7 +8,7 @@ USER appuser
 COPY src /app
 COPY pom.xml /app
 RUN mvn clean package
-ADD
+
 ENV AWS_DEFAULT_REGION=AP-SOUTH-1A
 ARD T_VERSION=1.6.6
 
