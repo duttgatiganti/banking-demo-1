@@ -10,7 +10,7 @@ COPY pom.xml /app
 RUN mvn clean package
 
 ENV AWS_DEFAULT_REGION=AP-SOUTH-1A
-ARD T_VERSION=1.6.6
+
 
 FROM openjdk:11-jre-slim
 
