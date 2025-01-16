@@ -1,7 +1,7 @@
 FROM maven:3.8.5-openjdk-17-slim AS build
 LABEL namw="axr"
 WORKDIR /app
-RUN MKDIR
+
 RUN groupadd appuser && useradd -r -g appuser appuser \
     apt update -y && apt install maven -y
 USER appuser
