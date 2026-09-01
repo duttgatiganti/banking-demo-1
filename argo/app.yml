@@ -12,9 +12,22 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: app1-ns
+  # syncPolicy:
+  #   automated:
+  #     prune: true
+  #     selfHeal: true
+  #   syncOptions:
+  #     - CreateNamespace=true
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      #name: app1
+      #namespace: app1-ns
+      jsonPointers:
+        - /spec/replicas
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+      - RespectIgnoreDifferences=true
